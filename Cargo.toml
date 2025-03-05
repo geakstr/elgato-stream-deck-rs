@@ -1,0 +1,21 @@
+[package]
+authors = ["Dima Kharitonov <mail@dima.pub>"]
+name = "elgato-stream-deck-rs"
+description = "Opinionated controller for Elgato Stream Deck pedals"
+version = "1.0.0"
+edition = "2024"
+publish = false
+
+[profile.release]
+opt-level = 3
+lto = true
+panic = "abort"
+strip = "symbols"
+codegen-units = 1
+
+[dependencies]
+core-foundation = "0.10.0"
+core-foundation-sys = "0.8.7"
+enigo = "0.3.0"
+hidapi = "2.6.3"
+tokio = { version = "1.43.0", features = ["full"] }
